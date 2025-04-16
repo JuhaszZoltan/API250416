@@ -55,7 +55,8 @@ builder.Services.AddCors(
 app.UseCors();
 ```
 
-### [Controllers] > Add > new scaffolded item... > `API Controller with actions using EF`[^1]
+### [Controllers] > Add > new scaffolded item... > 
+### `API Controller with actions using EF`[^1]
 
 |    attribute    |       value        |
 | :---            |               ---: |
