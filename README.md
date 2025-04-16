@@ -1,5 +1,5 @@
 # REST API with EF controller actions, .NET8
-### ==Visual Studio 2022==
+### Visual Studio 2022
 - project template: `ASP.NET Core Web API`
 - [x] place solutioon and project in the same directory
 - framework: .`NET 8.0`
@@ -7,33 +7,33 @@
 - [x] enable Open API Support (swagger)
 - [x] use controllers (MVC)
 
-==SQL Server Object Explorer== (View > )
-- localdb\MSSQLLocalDb -> `new Querry`
-> make the database
+### SQL Server Object Explorer (View > )
+- localdb\MSSQLLocalDb > `new Querry`
+- make the database
 
-==Package Manager Console== (Tools > NuGet package Manager > )
-```shell
+### Package Manager Console (Tools > NuGet package Manager > )
+```console
 Install-Package Microsoft.EntityFrameworkCore.SqlServer
 ```
-```shell
+```console
 Install-Package Microsoft.EntityFrameworkCore.Design
 ```
-```shell
+```console
 Install-Package Microsoft.EntityFrameworkCore.Tools
 ```
-
-
-```
+---
+```console
 Scaffold-DbContext "XxxConnectionString" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context XxxDbContext -DataAnnotations
 ```
 
---- to appsettings.json: ---
+### appsettings.json:
+```json
 "ConnectionStrings": {
-    "DefaultConnection": "_MyConnectionString_"
+    "DefaultConnection": "XxxConnectionString"
   },
-
---- to program.cs ---
-```cs
+```
+### program.cs
+```csharp
 var connectionString = builder.Configuration
 	.GetConnectionString("DefaultConnection");
 builder.Services
@@ -41,9 +41,8 @@ builder.Services
 	(opt => opt.UseSqlServer(connectionString));
 ```
 	
---- Controllers forlder -> Add -> new scaffolded item... ---
-
--> API Controller with actions using EF ->
+### [Controllers] > Add > new scaffolded item...
+### API Controller with actions using EF
 model class::: _MyModel_
 dbcontext class::: _MyDbContext_
 controller name::: _MyModel_s (default)
