@@ -8,10 +8,10 @@
 - [x] use controllers (MVC)
 
 ### `SQL Server Object Explorer` (View > )
+> make the database from the .sql dump
 - localdb\MSSQLLocalDb > `new Querry`
-> make the database
 
-### `Package Manager Console` (Tools > NuGet package Manager > )[^1]
+### `Package Manager Console`[^1] (Tools > NuGet package Manager > )
 ```console
 Install-Package Microsoft.EntityFrameworkCore.SqlServer
 ```
@@ -27,13 +27,13 @@ Install-Package Microsoft.EntityFrameworkCore.Tools
 Scaffold-DbContext "_MyConnectionString" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context _MyDbContext -DataAnnotations
 ```
 
-### appsettings.json:
+### appsettings.json:[^1]
 ```json
 "ConnectionStrings": {
     "DefaultConnection": "_MyConnectionString"
   },
 ```
-### program.cs
+### program.cs[^1]
 > add ef db service
 ```csharp
 builder.Services.AddDbContext<_MyDbContext>(opt => 
@@ -55,10 +55,12 @@ builder.Services.AddCors(
 app.UseCors();
 ```
 
-### [Controllers] > Add > new scaffolded item... > `API Controller with actions using EF`
+### [Controllers] > Add > new scaffolded item... > `API Controller with actions using EF`[^1]
 
 |    attribute    |       value        |
 | :---            |               ---: |
 |model class:     |           _MyModel |
 |dbcontext class: |       _MyDbContext |
 |controller name: |          _MyModels |
+
+[^1]: replace the term `_My` with the name of the model (singular or plural depending on the context!).
