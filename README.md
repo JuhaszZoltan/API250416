@@ -41,8 +41,7 @@ builder.Services
 	(opt => opt.UseSqlServer(connectionString));
 ```
 	
-### [Controllers] > Add > new scaffolded item...
-### API Controller with actions using EF
+### [Controllers] > Add > new scaffolded item... > `API Controller with actions using EF`
 model class::: _MyModel_
 dbcontext class::: _MyDbContext_
 controller name::: _MyModel_s (default)
