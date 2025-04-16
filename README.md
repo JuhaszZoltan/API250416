@@ -23,8 +23,8 @@ Install-Package Microsoft.EntityFrameworkCore.Tools
 ```
 
 
-```shell
-Scaffold-DbContext "$MyConnectionString$" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context $MyDbContext$ -DataAnnotations
+```
+Scaffold-DbContext "XxxConnectionString" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context XxxDbContext -DataAnnotations
 ```
 
 --- to appsettings.json: ---
