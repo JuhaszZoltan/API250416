@@ -7,11 +7,11 @@
 - [x] enable Open API Support (swagger)
 - [x] use controllers (MVC)
 
-### SQL Server Object Explorer (View > )
+### `SQL Server Object Explorer` (View > )
 - localdb\MSSQLLocalDb > `new Querry`
-- make the database
+> make the database
 
-### Package Manager Console (Tools > NuGet package Manager > )
+### `Package Manager Console` (Tools > NuGet package Manager > )[^1]
 ```console
 Install-Package Microsoft.EntityFrameworkCore.SqlServer
 ```
@@ -57,6 +57,8 @@ app.UseCors();
 
 ### [Controllers] > Add > new scaffolded item... > `API Controller with actions using EF`
 
-|model class:| _MyModel|
-|dbcontext class:| _MyDbContext|
-|controller name:| _MyModels (default)|
+|    attribute    |       value        |
+| :---            |               ---: |
+|model class:     |           _MyModel |
+|dbcontext class: |       _MyDbContext |
+|controller name: |          _MyModels |
