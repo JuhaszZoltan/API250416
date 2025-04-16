@@ -1,22 +1,31 @@
 # REST API with EF controller actions, .NET8
-## Visual Studio 2022
-project template: ASP.NET Core Web API
+### ==Visual Studio 2022==
+- project template: `ASP.NET Core Web API`
 - [x] place solutioon and project in the same directory
-- [x] framework: .NET 8.0
+- framework: .`NET 8.0`
 - [x] configurate for https
 - [x] enable Open API Support (swagger)
-- [x] use controllers (for MVC...)
+- [x] use controllers (MVC)
 
---- view ->  SQL Server Object Explorer --- 
-localdb\MSSQLLocalDb -> new Querry
-<magic>make the database</magic> 
+==SQL Server Object Explorer== (View > )
+- localdb\MSSQLLocalDb -> `new Querry`
+> make the database
 
---- to package manager console ---
+==Package Manager Console== (Tools > NuGet package Manager > )
+```shell
 Install-Package Microsoft.EntityFrameworkCore.SqlServer
+```
+```shell
 Install-Package Microsoft.EntityFrameworkCore.Design
+```
+```shell
 Install-Package Microsoft.EntityFrameworkCore.Tools
+```
 
-Scaffold-DbContext "_MyConnectionString_" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context _MyDbContext_ -DataAnnotations
+
+```shell
+Scaffold-DbContext "$MyConnectionString$" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context $MyDbContext$ -DataAnnotations
+```
 
 --- to appsettings.json: ---
 "ConnectionStrings": {
