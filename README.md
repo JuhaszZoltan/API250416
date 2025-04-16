@@ -21,39 +21,42 @@ Install-Package Microsoft.EntityFrameworkCore.Design
 ```console
 Install-Package Microsoft.EntityFrameworkCore.Tools
 ```
----
+
+
 ```console
-Scaffold-DbContext "XxxConnectionString" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context XxxDbContext -DataAnnotations
+Scaffold-DbContext "_MyConnectionString" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context _MyDbContext -DataAnnotations
 ```
 
 ### appsettings.json:
 ```json
 "ConnectionStrings": {
-    "DefaultConnection": "XxxConnectionString"
+    "DefaultConnection": "_MyConnectionString"
   },
 ```
 ### program.cs
+> add ef db service
 ```csharp
-var connectionString = builder.Configuration
-	.GetConnectionString("DefaultConnection");
-builder.Services
-	.AddDbContext<_MyDbContext_>
-	(opt => opt.UseSqlServer(connectionString));
+builder.Services.AddDbContext<_MyDbContext>(opt => 
+    opt.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection"));
 ```
-	
-### [Controllers] > Add > new scaffolded item... > `API Controller with actions using EF`
-model class::: _MyModel_
-dbcontext class::: _MyDbContext_
-controller name::: _MyModel_s (default)
-
---- allow CORS (to program.cs) ---
-
+> add CORS service
+```csharp
 builder.Services.AddCors(
     options => options.AddDefaultPolicy(
         builder => builder
         .AllowAnyOrigin()
         .AllowAnyHeader()
         .AllowAnyMethod()));
-
-// add this BEFORE app.UseHttpsRedirection();
+```
+> use CORSE
+```csharp
+// must be BEFORE app.UseHttpsRedirection();
 app.UseCors();
+```
+
+### [Controllers] > Add > new scaffolded item... > `API Controller with actions using EF`
+
+|model class:| _MyModel|
+|dbcontext class:| _MyDbContext|
+|controller name:| _MyModels (default)|
