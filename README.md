@@ -1,12 +1,11 @@
-# API250416
-
+# REST API with EF controller actions, .NET8
 ## Visual Studio 2022
 project template: ASP.NET Core Web API
-[x] place solutioon and project in the same directory
-framework: .NET 8.0
-[x] configurate for https
-[x] enable Open API Support (swagger)
-[x] use controllers (for MVC...)
+- [x] place solutioon and project in the same directory
+- [x] framework: .NET 8.0
+- [x] configurate for https
+- [x] enable Open API Support (swagger)
+- [x] use controllers (for MVC...)
 
 --- view ->  SQL Server Object Explorer --- 
 localdb\MSSQLLocalDb -> new Querry
