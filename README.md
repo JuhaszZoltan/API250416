@@ -8,7 +8,7 @@
 - [x] use controllers (MVC)
 
 ### `SQL Server Object Explorer` (View > )
-> make the database from the .sql dump
+> make the database from the .sql dump[^2]
 - localdb\MSSQLLocalDb > `new Querry`
 
 ### `Package Manager Console`[^1] (Tools > NuGet package Manager > )
@@ -65,3 +65,4 @@ app.UseCors();
 |controller name: |          _MyModels |
 
 [^1]: replace the term `_My` with the name of the model (singular or plural depending on the context!).
+[^2]: If necessary, convert thie source. In T-SQL `INT`s have no length and `AUTO_INCREMENT` is equivalent to `IDENTITY`. `CREATE DATATABASE` and `USE` must be driven separate sessions from `CREATE TABLE` and `INSERT INTO`.
