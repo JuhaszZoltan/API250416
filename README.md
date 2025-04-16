@@ -38,7 +38,8 @@ Scaffold-DbContext "_MyConnectionString" Microsoft.EntityFrameworkCore.SqlServer
 ```csharp
 builder.Services.AddDbContext<_MyDbContext>(opt => 
     opt.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection"));
+        builder.Configuration
+        .GetConnectionString("DefaultConnection")));
 ```
 > add CORS service
 ```csharp
