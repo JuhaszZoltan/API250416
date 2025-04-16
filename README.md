@@ -25,11 +25,13 @@ Scaffold-DbContext "_MyConnectionString_" Microsoft.EntityFrameworkCore.SqlServe
   },
 
 --- to program.cs ---
+```cs
 var connectionString = builder.Configuration
 	.GetConnectionString("DefaultConnection");
 builder.Services
 	.AddDbContext<_MyDbContext_>
 	(opt => opt.UseSqlServer(connectionString));
+```
 	
 --- Controllers forlder -> Add -> new scaffolded item... ---
 
