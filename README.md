@@ -13,16 +13,16 @@
 
 ### `Package Manager Console`[^1] (Tools > NuGet package Manager > )
 ```console
-Install-Package Microsoft.EntityFrameworkCore.SqlServer -version:8.0.22
+Install-Package Microsoft.EntityFrameworkCore.SqlServer -version:8.0.23
 ```
 ```console
-Install-Package Microsoft.EntityFrameworkCore.Design -version:8.0.22
+Install-Package Microsoft.EntityFrameworkCore.Design -version:8.0.23
 ```
 ```console
-Install-Package Microsoft.EntityFrameworkCore.Tools -version:8.0.22
+Install-Package Microsoft.EntityFrameworkCore.Tools -version:8.0.23
 ```
 ```console
-Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design -version:8.0.22
+Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design -version:8.0.23
 ```
 ```console
 Update-Package Swashbuckle.AspNetCore -version:8.1.4
